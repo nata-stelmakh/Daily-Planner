@@ -1,14 +1,33 @@
-https://nata-stelmakh.github.io/Daily-Planner/
-![](Screenshot%20(125).png)
+# 05 Third-Party APIs: Work Day Scheduler
 
+Create a simple calendar application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
 
+You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
 
+## User Story
 
+```
+AS AN employee with a busy schedule
+I WANT to add important events to a daily planner
+SO THAT I can manage my time effectively
+``
+WHEN I click the save button for that timeblock
+THEN the text for that event is saved in local storage
+WHEN I refresh the page
+THEN the saved events persist
+```
 
-1.daily planner to create a schedule.Current date and time are stored in a paragraf on the top of the page
-2.Structure of the page perfomed with timeblocks that are made out of an input forms
-3.Every input starts with indication of an hour
-4.Every input are closing with a save button
-5.Timeblocks  from 7am till 7pm
-6.When you click on a timeblock, you can enter an event
+The following animation demonstrates the application functionality:
 
+![day planner demo](./Assets/05-third-party-apis-homework-demo.gif)
+
+## Review
+
+You are required to submit the following for review:
+
+* The URL of the deployed application.
+
+* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+
+- - -
+© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
