@@ -4,7 +4,7 @@
 
 //1.Use paragraf with id "currentDay"and tie up with variable that will be a storage for moments.js function to display current day
 var todayDay = moment().format("MMM Do YY");
-var hourNow = moment().hour(Number);
+var hourNow = moment().hours();
 
 console.log(todayDay);
 console.log(hourNow);
@@ -42,15 +42,16 @@ function createTimeBlocks() {
       .appendTo(divForSaveBtn);
 
     if (i < hourNow) {
-      newBlock.css({ "background-color": "#d3d3d3", color: "white" });
       // -set attribute to an input with background color gray
-    } else if ((i = hourNow)) {
+      $(newBlock).addClass("past");
+    } else if (i === hourNow) {
       // -set attribute to an input with background color red
-      newBlock.css({ "background-color": "#ff6961", color: "white" });
+      $(newBlock).addClass("present");
     } else {
       // -set attribute to an input with background color green
-      newBlock.css({ "background-color": "#77dd77", color: "white" });
+      $(newBlock).addClass("future");
     }
+
     $(".container").append(inputGroup);
   }
 }
