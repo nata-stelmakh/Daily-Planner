@@ -4,7 +4,7 @@
 
 //1.Use paragraf with id "currentDay"and tie up with variable that will be a storage for moments.js function to display current day
 var todayDay = moment().format("MMM Do YY");
-var hourNow = moment().hours();
+var hourNow = moment().hour(Number);
 
 console.log(todayDay);
 console.log(hourNow);
@@ -26,21 +26,21 @@ $("#currentDay").text(todayDay);
 function createTimeBlocks(){
     
      for( i = 7; i<=19;i++){
-    hourNumberFormat = i + ":00"
+    var hourNumberFormat = i + ":00"
     var inputGroup = $("<div class='input-group mb-3'>").appendTo(".container");
     var divForTimeTag = $("<div class='input-group-prepend'>").appendTo(inputGroup);
     var timeTag = $("<span class='input-group-text' id='basic-addon1'>").text(hourNumberFormat).appendTo(divForTimeTag);
     var newBlock = $("<input type='text' class='form-control' class ='.time-block'>").appendTo(inputGroup);
     var divForSaveBtn = $("<div class='input-group-append'>").appendTo(inputGroup);
-    var saveBtn =$("<button class='btn btn-outline-secondary' type='button'>").text("Save").appendTo(divForSaveBtn);;
+    var saveBtn =$("<button class='btn btn-outline-secondary' type='button'>").text("Save").appendTo(divForSaveBtn);
    
       
      
-    if( i < parseInt(hourNow)){
+    if( i < hourNow){
         newBlock.css({"background-color": "#d3d3d3", "color": "white"});
     // -set attribute to an input with background color gray
     
-    }else if (i = parseInt(hourNow)) { 
+    }else if (i = hourNow) { 
         // -set attribute to an input with background color red
         newBlock.css({"background-color": "#ff6961","color": "white"});
     }else{ 
@@ -53,10 +53,10 @@ function createTimeBlocks(){
 };
 createTimeBlocks();
 
-function addTask(inputGroup){
+// function addTask(inputGroup){
 
 
-}
+// }
 
 // $("button").on("click",function(event){
 
