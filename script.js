@@ -19,18 +19,22 @@ $("#currentDay").text(todayDay);
 //2.2 that also has an initial block with a number indicating an hour
 //2.3 and a block in the end of the row with symbol and a function to save(send to a local storage)
 
-// var task = JSON.parse(localStorage.getItem("todo"));
-
 function createTimeBlocks() {
   for (i = 7; i <= 19; i++) {
     var hourNumberFormat = i + ":00";
-    var inputGroup = $("<div class='input-group mb-3'>").appendTo(".container");
+    var inputGroup = $(
+      "<div class='input-group mb-3' id='hour-" + i + "'>"
+    ).appendTo(".container");
     var divForTimeTag = $("<div class='input-group-prepend'>").appendTo(
       inputGroup
     );
     var timeTag = $("<span class='input-group-text' id='basic-addon1'>")
       .text(hourNumberFormat)
       .appendTo(divForTimeTag);
+    // WHEN I click into a timeblock
+    // THEN I can enter an event
+
+    //4.Each row in a timeblock should be made as an input form in order to easily edit info
     var newBlock = $(
       "<input type='text' class='form-control' class ='.time-block'>"
     ).appendTo(inputGroup);
@@ -40,6 +44,13 @@ function createTimeBlocks() {
     var saveBtn = $("<button class='btn btn-outline-secondary' type='button'>")
       .text("Save")
       .appendTo(divForSaveBtn);
+
+    // WHEN I view the timeblocks for that day
+    // THEN each timeblock is color coded to indicate whether it is in the past, present, or future
+
+    //3.Create a var hourNow that will contain current hour.
+    //3.1 Compare the number value of a first block in each row with a a var hourNow
+    //3.2 If-else statement that will assign a background color according to results of a comparison
 
     if (i < hourNow) {
       // -set attribute to an input with background color gray
@@ -57,29 +68,29 @@ function createTimeBlocks() {
 }
 createTimeBlocks();
 
-// function addTask(inputGroup){
+// WHEN I click the save button for that timeblock
+// THEN the text for that event is saved in local storage
 
-// }
+//get a text value of a task from a current timeblock when save button clicked and save into a local storage
+//add a key to a text value in order to operate it better
 
-// $("button").on("click",function(event){
-
-//     console.log("I got clicked!")
-//     var currentTask = $(this).newBlock.text();
-//     console.log(currentTask);
-// })
-//get a text from a current timeblock
-//turn into a string
-//send to a local storage
+$("button").on("click", function (event) {
+  console.log("I got clicked!");
+  var currentTask = $(this).parent().siblings("input").val();
+  var key = $(this).parent().parent().attr("id");
+  console.log(currentTask);
+  console.log(key);
+  localStorage.setItem(key, currentTask);
+});
 
 // WHEN I refresh the page
 // THEN the saved events persist
 
-// 6.Set the textcontent of a newBlock
-// localestorage.getItem
-// JSON parse()
-// $("button").on('click', (event) => {
-//     var clickedBlockTask = JSON.stringify(newBlock);
-//     $(this).localStorage.setItem("task", clickedBlockTask);
+// 6.Set the textcontent of a newBlock from a LocalStorage in order to have the saved tasks in place
+
+for (i = 7; i <= 19; i++) {
+  $("#hour-" + i + " input").val(localStorage.getItem("hour-" + i));
+}
 
 // });
 
@@ -96,33 +107,3 @@ createTimeBlocks();
 // </div>
 
 //=====================================
-
-// WHEN I view the timeblocks for that day
-// THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-
-//3.Create a var hourNow that will contain current hour.
-//3.1 Compare the number value of a first block in each row with a a var hourNow
-//3.2 If-else statement that will assign a background color according to results of a comparison
-// - done and included in a function createTimeBlocks ln 36-46
-
-// WHEN I click into a timeblock
-// THEN I can enter an event
-
-//4.Each row in a timeblock should be made as an input form in order to easily edit info
-// - done, look into a  newBlock structure ln 28-33
-
-// WHEN I click the save button for that timeblock
-// THEN the text for that event is saved in local storage
-
-//5. Look into 2.3: a block in the end of the row with symbol and a function to save(send to a local storage)
-// $("button").this.on("click") -
-//get a text from a current timeblock
-//turn into a string
-//send to a local storage
-
-// WHEN I refresh the page
-// THEN the saved events persist
-
-// 6.Set the textcontent of a newBlock
-// localestorage.getItem
-// JSON parse()
