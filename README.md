@@ -1,6 +1,6 @@
 https://nata-stelmakh.github.io/Daily-Planner/
 
-![]Screenshot (125).png
+![](Screenshot%20(125).png)
 
 
 
