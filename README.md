@@ -1,15 +1,34 @@
-https://nata-stelmakh.github.io/Daily-Planner/
+
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  # Daily-Planner
+  ## nata-stelmakh
+
+  https://nata-stelmakh.github.io/Daily-Planner/
 
 ![](Screenshot%20(125).png)
 
+  ## Description 
+  
+  An application that helps to keep track on daily tasks.
+  
+
+  ## Table of Contents  
+  
+  * [Usage](#usage)
+  * [License](#license)
+    
+  ## Usage
+  
+  When user open the page  he will be presented with a list of time blocks and a current date and time on top of the page.
+   Each of time blocks will be colored (red -past hour, green -cureent, gray-future).Each time block is a text area, where can be enetered daily task, and after clicking button"save" will be saved.Each task is easy to edit as well.
+
+  ## License
+  
+  MIT
+  
+  stelmakh.natallia@gmail.com
 
 
-1.created Daily planner
-2.Current day displayed on top
-3.Created timeblocks from 7am to 7 pm
-4.Each timeblock is an input that easy to edit
-5.Each timeblock begins with number of an hour
-6.Each block ends with a save button
-7.depending of what is a current hour. each input has a different color
 
 
